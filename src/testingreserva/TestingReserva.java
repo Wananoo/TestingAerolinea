@@ -8,6 +8,8 @@ package testingreserva;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -26,6 +28,8 @@ public class TestingReserva {
             System.out.println("-- 2) Clase Cliente, getUbicacion() --");
             System.out.println("-- 3) Clase Asiento, getEdad() --");
             System.out.println("-- 4) Clase Vuelo, setFechaVuelo() y setHoraVuelo() --");
+            System.out.println("-- 5) Clase Avion, getAsientosDisponibles() --");
+            System.out.println("-- 6) Clase Avion, reservaAsiento() --");
             op = Integer.valueOf(br.readLine());
             switch(op)
             {
@@ -45,6 +49,16 @@ public class TestingReserva {
                     break;
                 }
                 case 4:
+                {
+                    TestingVuelosetFechaVuelosetHoraVuelo();
+                    break;
+                }
+                case 5:
+                {
+                    TestingVuelosetFechaVuelosetHoraVuelo();
+                    break;
+                }
+                case 6:
                 {
                     TestingVuelosetFechaVuelosetHoraVuelo();
                     break;
@@ -99,4 +113,14 @@ public class TestingReserva {
         TestingVuelo TV = new TestingVuelo(fechavuelo,horavuelo);
         System.out.println(TV.getFechaVuelo().toString() +" "+ TV.getHoraVuelo().toString());
         }
+    public static void TestingAviongetAsientosDisponibles() throws IOException
+        {
+        TestingAvion TAvion = new TestingAvion();
+        Map asientosAvion = (Map) TAvion.getAsientosDisponibles("",""); 
+        for (Iterator<Asiento> it = asientosAvion.keySet().iterator(); it.hasNext(); ) 
+            {
+                    System.out.println(it.next());
+            }
+        }
+        
 }
