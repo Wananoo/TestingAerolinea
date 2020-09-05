@@ -9,6 +9,9 @@ package testingreserva;
  *
  * @author wanan
  */
+
+//clase driver de Asiento que contiene solo las variables que los metodos a 
+//testear van a ocupar. Se invocan desde main
 public class TestingAsiento {
     
     private Integer numero;
